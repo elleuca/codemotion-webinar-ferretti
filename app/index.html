@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Tested Facts</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="myapp.css">
+</head>
+
+<body ng-app="tested-facts" ng-controller="FactsControllers">
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">{{name}}</a>
+      </div>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="searchString" placeholder="Enter your search terms" />
+        </div>
+        <button class="btn btn-primary" ng-click="fetchFacts()">
+          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Fetch
+        </button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>{{headline}}</h1>
+      <p>{{error}}</p>
+      <ul class="foo list-unstyled">
+        <li ng-repeat="joke in data.value | searchFor:searchString">
+          <p class="text-uppercase fact-title">Fact #{{joke.id}}</p>
+          <p class="lead fact-body">{{joke.joke}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="myapp.js"></script>
+
+</body>
+
+</html>

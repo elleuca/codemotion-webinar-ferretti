@@ -1,0 +1,27 @@
+{
+  "name": "codemotion-webinar-ferretti",
+  "version": "0.1.0",
+  "description": "Materiale per Tech Webinar su Protractor (test e2e per AngularJS e non solo)",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node app/expressserver.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elleuca/codemotion-webinar-ferretti"
+  },
+  "author": "Luca Ferretti",
+  "license": "MIT",
+  "keywords": [
+    "protractor",
+    "selenium",
+    "webdriver",
+    "webdriverjs",
+    "testing",
+    "codemotion",
+    "webinar"
+  ],
+  "devDependencies": {
+    "express": "^4.10.7",
+  }
+}
