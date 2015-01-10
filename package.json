@@ -2,20 +2,20 @@
   "name": "codemotion-webinar-ferretti",
   "version": "0.1.0",
   "description": "Materiale per Tech Webinar su Protractor (test e2e per AngularJS e non solo)",
+  "bin": {
+    "protractor": "./node_modules/protractor/bin/protractor",
+    "webdriver-manager": "./node_modules/protractor/bin/webdriver-manager"
+  },
   "scripts": {
     "prestart": "npm install",
     "start": "node app/expressserver.js",
-
-    "test": "echo \"Error: no test specified\" && exit 1",
-
+    "test": "npm run protractor",
     "preupdate-webdriver": "npm install",
-    "update-webdriver": "./node_modules/protractor/bin/webdriver-manager update",
-
+    "update-webdriver": "webdriver-manager update",
     "preselenium-server": "npm run update-webdriver",
-    "selenium-server": "./node_modules/protractor/bin/webdriver-manager start",
-
+    "selenium-server": "webdriver-manager start",
     "preprotractor": "npm run update-webdriver",
-    "protractor": "./node_modules/protractor/bin/protractor test/protractor-conf.js"
+    "protractor": "protractor test/protractor-conf.js"
   },
   "repository": {
     "type": "git",
