@@ -4,7 +4,18 @@
   "description": "Materiale per Tech Webinar su Protractor (test e2e per AngularJS e non solo)",
   "scripts": {
     "prestart": "npm install",
-    "start": "node app/expressserver.js"
+    "start": "node app/expressserver.js",
+
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "./node_modules/protractor/bin/webdriver-manager update",
+
+    "preselenium-server": "npm run update-webdriver",
+    "selenium-server": "./node_modules/protractor/bin/webdriver-manager start",
+
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "./node_modules/protractor/bin/protractor test/protractor-conf.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +34,6 @@
   ],
   "devDependencies": {
     "express": "^4.10.7",
+    "protractor": "^1.6.0"
   }
 }
